@@ -1,0 +1,61 @@
+MODEL:
+  PRETRAIN_CHOICE: 'imagenet'
+  PRETRAIN_PATH:  '/root/shared-nvme/data/jx_vit_base_p16_224-80ecf9dd.pth'
+  METRIC_LOSS_TYPE: 'triplet'
+  IF_LABELSMOOTH: 'on'
+  IF_WITH_CENTER: 'no'
+  NAME: 'transformer'
+  NO_MARGIN: False
+  DEVICE_ID: ('0')
+  TRANSFORMER_TYPE: 'vit_base_patch16_224_TransReID'
+  STRIDE_SIZE: [16, 16]
+  DIRECT: 0 # We find that for vehicle reid, indirect is better than direct
+  tta_weight: 0.0005
+  proxy_num: 1
+
+
+INPUT:
+  SIZE_TRAIN: [128, 256]
+  SIZE_TEST:  [128, 256]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+
+DATASETS:
+  NAMES: ('RGBNT100')
+  ROOT_DIR: ('/root/shared-nvme/data/')
+
+
+DATALOADER:
+  SAMPLER: 'softmax_triplet'
+  NUM_INSTANCE: 8
+  NUM_WORKERS: 8
+
+
+SOLVER:
+  OPTIMIZER_NAME: 'Adam'
+  BASE_LR: 0.00005
+  IMS_PER_BATCH: 64
+  WARMUP_ITERS: 10
+  MARGIN: 0.5
+  LOG_PERIOD: 50
+  SEED: 42
+
+
+ 
+ 
+
+
+TEST:
+  RE_RANKING: 'no'
+  WEIGHT: ''
+  NECK_FEAT: 'before'
+  FEAT_NORM: 'yes'
+  MISS: "nothing"
+  IMS_PER_BATCH: 64
+  TTA_epoch: 1
+OUTPUT_DIR: './logs/rgbnt100/porxy'
+
+
