@@ -47,7 +47,7 @@ SOLVER:
 
 TEST:
   RE_RANKING: 'no'
-  WEIGHT: '/root/shared-nvme/ProxyTTT/logs/WMVEID863/proxy_clip_tta/725.pth'
+  WEIGHT: ''
   NECK_FEAT: 'before'
   FEAT_NORM: 'yes'
   MISS: "nothing"

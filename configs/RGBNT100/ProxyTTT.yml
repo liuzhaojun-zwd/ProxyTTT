@@ -1,13 +1,11 @@
 MODEL:
   PRETRAIN_CHOICE: 'imagenet'
-  PRETRAIN_PATH: '/root/shared-nvme/data/jx_vit_base_p16_224-80ecf9dd.pth'
   METRIC_LOSS_TYPE: 'triplet'
   IF_LABELSMOOTH: 'on'
   IF_WITH_CENTER: 'no'
   NAME: 'ViT-B-16'
   NO_MARGIN: False
   DEVICE_ID: ('0')
-  TRANSFORMER_TYPE: 'vit_base_patch16_224_TransReID'
   STRIDE_SIZE: [16, 16]
   DIRECT: 0
   entropy: 0.45
@@ -50,11 +48,11 @@ SOLVER:
 
 TEST:
   RE_RANKING: 'no'
-  WEIGHT: '/root/shared-nvme/PCL/logs/rgbnt100/proxy_clip_tta/893_tta.pth'
+  WEIGHT: ''
   NECK_FEAT: 'before'
   FEAT_NORM: 'yes'
   MISS: "nothing"
   IMS_PER_BATCH: 64
   TTT_epoch: 2
 
-OUTPUT_DIR: './logs/rgbnt100/proxy_clip'
+OUTPUT_DIR: './logs/rgbnt100/ProxyTTT'
