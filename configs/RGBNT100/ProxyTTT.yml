@@ -55,4 +55,4 @@ TEST:
   IMS_PER_BATCH: 64
   TTT_epoch: 2
 
-OUTPUT_DIR: './logs/rgbnt100/ProxyTTT'
+OUTPUT_DIR: './logs/RGBNT100/ProxyTTT'

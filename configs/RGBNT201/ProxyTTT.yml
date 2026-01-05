@@ -47,12 +47,12 @@ SOLVER:
 
 TEST:
   RE_RANKING: 'no'
-  WEIGHT: '/root/shared-nvme/ProxyTTT/logs/rgbnt201/proxy_clip_tta/850_best.pth'
+  WEIGHT: ''
   NECK_FEAT: 'before'
   FEAT_NORM: 'yes'
-  # MISS: 'R'
+  MISS: 'nothing'
   IMS_PER_BATCH: 64
   TTT_epoch: 2
 
 
-OUTPUT_DIR: './logs/rgbnt201/test'
+OUTPUT_DIR: './logs/RGBNT201201/ProxyTTT'

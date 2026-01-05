@@ -54,4 +54,4 @@ TEST:
   IMS_PER_BATCH: 64
   TTT_epoch: 2
 
-OUTPUT_DIR: './logs/msvr310/ProxyTTT'
+OUTPUT_DIR: './logs/MSVR310/ProxyTTT'

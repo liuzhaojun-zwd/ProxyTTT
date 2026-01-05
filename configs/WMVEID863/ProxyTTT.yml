@@ -55,4 +55,4 @@ TEST:
   TTT_epoch: 1 #2
 
 
-OUTPUT_DIR: './logs/WMVEID863/统计参数量'
+OUTPUT_DIR: './logs/WMVEID863/ProxyTTT'
